@@ -33,7 +33,7 @@ public class Orders {
 			)
 	
 	@Column(name="orderNo")
-	private String OrderNo;
+	private Long OrderNo;
 	
 	@PrimaryKeyJoinColumn
 	@Column(name="userId")
@@ -67,10 +67,10 @@ public class Orders {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Product Product;
 	
-	public String getOrderNo() {
+	public Long getOrderNo() {
 		return OrderNo;
 	}
-	public void setOrderNo(String orderNo) {
+	public void setOrderNo(Long orderNo) {
 		OrderNo = orderNo;
 	}
 	public int getOrderTotal() {
@@ -109,7 +109,7 @@ public class Orders {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	public Orders(Long orderId, String orderNo, Long userId, int orderTotal, int totalQty, Date createdAt,
+	public Orders(Long orderId, Long orderNo, Long userId, int orderTotal, int totalQty, Date createdAt,
 			String createdBy, Date modifiedAt, String modifiedBy) {
 		super();
 		OrderId = orderId;

@@ -14,7 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.criteria.Order;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -41,7 +43,10 @@ public class Product {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "User", referencedColumnName = "id")
 	private User user;
-
+	
+	@PrimaryKeyJoinColumn
+	@Column(name="userId")
+	private Long UserId;
 
 	@Column(name="Productname")
 	private String Productname;
@@ -147,6 +152,22 @@ public class Product {
 				+ ", createdBy=" + createdBy + ", modifiedAt=" + modifiedAt + ", modifiedBy=" + modifiedBy + "]";
 	}
 	public Object getaddress1() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object setOrder(Order order) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getorders() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public Object getUserId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
